@@ -1,6 +1,6 @@
 import gsap from "gsap"
 
-export const TextReveal = (el: HTMLElement | NodeListOf<HTMLElement>, timeLine?: GSAPTimeline) => {
+export const TextReveal = (el: any, timeLine?: GSAPTimeline) => {
     const tl = timeLine || gsap.timeline()
     // @ts-ignore
     tl.from(el.children, {
@@ -50,7 +50,7 @@ export const LoadingAnimation = (fullScreen: HTMLElement, elem1: HTMLElement) =>
             {
                 height: "0%",
                 top: 0,
-                ease: "expo.inOut", 
+                ease: "expo.inOut",
                 duration: 0.5,
             },
         )
