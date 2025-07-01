@@ -1,0 +1,64 @@
+.animatedText {
+
+    animation: fills 1s ease-in forwards 8s;
+}
+
+.animatedText path:nth-child(1) {
+    stroke-dasharray: 315.4770812988281;
+    stroke-dashoffset: 315.4770812988281;
+    animation: animates 1s ease-in forwards 7s;
+}
+
+
+.animatedText path:nth-child(2) {
+    stroke-dasharray: 484.80609130859375;
+    stroke-dashoffset: 484.80609130859375;
+    animation: animates 1s ease-in forwards 7.3s;
+
+}
+
+.animatedText path:nth-child(3) {
+    stroke-dasharray: 528.1263427734375;
+    stroke-dashoffset: 528.1263427734375;
+    animation: animates 1s ease-in forwards 7.6s;
+}
+
+.animatedText path:nth-child(4) {
+    stroke-dasharray: 291.94293212890625;
+    stroke-dashoffset: 291.94293212890625;
+    animation: animates 1s ease-in forwards 7.9s;
+}
+
+
+.animatedText path:nth-child(5) {
+    stroke-dasharray: 277.3301086425781;
+    stroke-dashoffset: 277.3301086425781;
+    animation: animates 1s ease-in forwards 8.2s;
+}
+
+.animatedText path:nth-child(6) {
+    stroke-dasharray: 559.4695434570312;
+    stroke-dashoffset: 559.4695434570312;
+    animation: animates 1s ease-in forwards 8.5s;
+}
+
+@keyframes animates {
+
+
+    to {
+
+        stroke-dashoffset: 0;
+
+    }
+
+}
+
+@keyframes fills {
+    from {
+        fill: transparent
+    }
+
+    to {
+        fill: #14CF93
+    }
+}

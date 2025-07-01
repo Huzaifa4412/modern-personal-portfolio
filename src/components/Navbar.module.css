@@ -1,0 +1,12 @@
+.navLink::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #14cf93;
+    transition: width 0.3s;
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
