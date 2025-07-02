@@ -1,0 +1,70 @@
+[
+    // card 1 data
+    {
+        'image_path': "/khizar-services/img2.jpeg",
+        'icon_path': "/khizar-services/icon1.png",
+        'icon_name': "On-Page SEO Optimization",
+        'title': "On-Page SEO Optimization",
+        'description': "Title, meta description, heading tags optimization
+        Image alt texts & file names
+        Internal linking improvements
+        Schema markup implementation
+        and more.....",
+        "price": "$150–$800 per site",
+
+    },
+    // card 2 data
+    {
+        'image_path': "/khizar-services/img5.jpeg",
+        'icon_path': "/khizar-services/icon2.png",
+        'icon_name': "Technical Fixes & Implementation",
+        'title': "Technical Fixes & Implementation",
+        'description':  "
+        Fix crawl errors & broken links
+        Resolve duplicate content
+        Implement redirects & canonical tags
+        Improve page speed (caching, compression, image optimization) and more...",
+        "price": "$200–$1,000 per project",
+    },
+    
+     // card 3 data
+     {
+        'image_path': "/khizar-services/img3.jpeg",
+        'icon_path': "/khizar-services/icon3.png",
+        'icon_name': "Local SEO Optimization",
+        'title': "Local SEO Optimization",
+        'description':  "
+        Google My Business optimization
+        NAP (Name, Address, Phone) consistency
+        Local citations building
+        Local keyword optimization and more...",
+        "price": "$150–$700 per location",
+
+    },
+    // card 4 data
+    {
+        'image_path': "/khizar-services/img2.jpeg",
+        'icon_path': "/khizar-services/icon5.png",
+        'icon_name': "Keyword Research & Mapping",
+        'title': "Keyword Research & Mapping",
+        'description': "Niche-specific keyword discovery
+        Search volume & competition analysis
+        Keyword intent mapping for pages
+        Keyword plan document and more..",
+        "price": "yahan price daalna h",
+    },
+     // card 5 data
+     {
+        'image_path': "/khizar-services/img1.jpeg",
+        'icon_path': "/khizar-services/icon4.png",
+        'icon_name': "Link Building ",
+        'title': "Link Building ",
+        'description': "Research relevant sites for outreach
+Craft custom outreach emails
+Secure high-authority backlinks
+Provide backlink report and more....",
+        "price": " $50–$300 per link",
+
+    },
+   
+]
