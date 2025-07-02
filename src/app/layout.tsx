@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={gilroy.variable}>
+    <html lang="en" className={gilroy.variable} suppressHydrationWarning>
       <body suppressHydrationWarning className={`antialiased`}>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
