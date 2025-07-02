@@ -1,16 +1,15 @@
-import { Outfit, Cormorant_Garamond } from 'next/font/google'
+import { Urbanist, Dancing_Script } from 'next/font/google'
 
-export const gilroy = Outfit({
+export const gilroy = Urbanist({
     subsets: ['latin'],
-    weight: ['400', '600'],
+    weight: ['300', '400', '500', '600', '700'],
     variable: '--font-gilroy',
     display: 'swap',
 })
 
-export const mazius = Cormorant_Garamond({
+export const mazius = Dancing_Script({
     subsets: ['latin'],
-    weight: ['400'],
-    style: ['italic'],
+    weight: ['400', '500', '600', '700'],
     variable: '--font-mazius',
     display: 'swap',
 })
