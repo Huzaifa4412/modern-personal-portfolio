@@ -8,16 +8,17 @@ import MyServices from "@/components/MyServices";
 
 const page = () => {
 
-
   return (
-    <div className={'w-full h-full overflow-hidden'}>
+      <>
+    {/*<div className={'w-full h-full overflow-hidden'}>*/}
       <Loader />
       <Navbar />
       <Hero />
       <AboutMe />
       <MyCreation />
         <MyServices />
-    </div>
+    {/*</div>*/}
+      </>
   );
 };
 
