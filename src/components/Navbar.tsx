@@ -7,9 +7,9 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navRef = useRef(null);
-  const mobileMenuRef = useRef(null);
-  const navLinksRef = useRef([]);
+  const navRef = useRef<HTMLElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const navLinksRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
     // Import GSAP dynamically
@@ -39,14 +39,23 @@ const Navbar = () => {
 
       // Hover animations
       navLinksRef.current.forEach((link) => {
-        if (link) {
-          link.addEventListener("mouseenter", () => {
+        if (link && link instanceof HTMLElement) {
+          const handleMouseEnter = () => {
             gsap.to(link, { scale: 1.1, duration: 0.3, ease: "power2.out" });
-          });
+          };
 
-          link.addEventListener("mouseleave", () => {
+          const handleMouseLeave = () => {
             gsap.to(link, { scale: 1, duration: 0.3, ease: "power2.out" });
-          });
+          };
+
+          link.addEventListener("mouseenter", handleMouseEnter);
+          link.addEventListener("mouseleave", handleMouseLeave);
+
+          // Cleanup function
+          return () => {
+            link.removeEventListener("mouseenter", handleMouseEnter);
+            link.removeEventListener("mouseleave", handleMouseLeave);
+          };
         }
       });
     };
@@ -111,7 +120,9 @@ const Navbar = () => {
             <li key={item.name}>
               <Link
                 href={item.href}
-                ref={(el) => (navLinksRef.current[index] = el)}
+                ref={(el: HTMLAnchorElement | null) => {
+                  navLinksRef.current[index] = el;
+                }}
                 className={`cursor-pointer text-zinc-900 transition-colors duration-300 hover:text-[#14CF93] ${styles.navLink}`}
               >
                 {item.name}
