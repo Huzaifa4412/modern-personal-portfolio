@@ -1,6 +1,6 @@
 .animatedText {
 
-    animation: fills 1s ease-in forwards 8s;
+    animation: fills 1s ease-in forwards 10s;
 }
 
 .animatedText path:nth-child(1) {
