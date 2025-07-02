@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { navItems } from "@/constants/navItems";
@@ -17,25 +15,30 @@ const Navbar = () => {
       const { gsap } = await import("gsap");
 
       // Initial animation for navbar
-      gsap.fromTo(
-        navRef.current,
-        { y: -100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-      );
+      if (navRef.current) {
+        gsap.fromTo(
+          navRef.current,
+          { y: -100, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+        );
+      }
 
       // Stagger animation for nav links
-      gsap.fromTo(
-        navLinksRef.current,
-        { y: -20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          delay: 0.3,
-          ease: "power2.out",
-        },
-      );
+      const validLinks = navLinksRef.current.filter((link) => link !== null);
+      if (validLinks.length > 0) {
+        gsap.fromTo(
+          validLinks,
+          { y: -20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.1,
+            delay: 0.3,
+            ease: "power2.out",
+          },
+        );
+      }
 
       // Hover animations
       navLinksRef.current.forEach((link) => {
@@ -67,18 +70,20 @@ const Navbar = () => {
     const loadGSAP = async () => {
       const { gsap } = await import("gsap");
 
-      if (isMobileMenuOpen) {
+      if (isMobileMenuOpen && mobileMenuRef.current) {
         gsap.fromTo(
           mobileMenuRef.current,
           { height: 0, opacity: 0 },
           { height: "auto", opacity: 1, duration: 0.5, ease: "power3.out" },
         );
 
-        gsap.fromTo(
-          mobileMenuRef.current.children,
-          { x: -50, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.2 },
-        );
+        if (mobileMenuRef.current.children.length > 0) {
+          gsap.fromTo(
+            mobileMenuRef.current.children,
+            { x: -50, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.4, stagger: 0.1, delay: 0.2 },
+          );
+        }
       } else if (mobileMenuRef.current) {
         gsap.to(mobileMenuRef.current, {
           height: 0,
@@ -95,7 +100,7 @@ const Navbar = () => {
   const toggleMobileMenu = async () => {
     const { gsap } = await import("gsap");
 
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen && mobileMenuRef.current) {
       gsap.to(mobileMenuRef.current, {
         height: 0,
         opacity: 0,
