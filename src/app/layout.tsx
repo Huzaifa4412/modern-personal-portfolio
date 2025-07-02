@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { gilroy } from "./font";
+import { gilroy } from "../font";
 
 import "locomotive-scroll/dist/locomotive-scroll.css";
-import {SmoothScroll} from "@/app/SmoothScroll";
+import { SmoothScroll } from "@/app/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Huzaifa | Portfolio",
@@ -20,9 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={gilroy.variable}>
       <body suppressHydrationWarning className={`antialiased`}>
-<SmoothScroll>
-        {children}
-</SmoothScroll>
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

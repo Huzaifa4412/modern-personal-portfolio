@@ -1,4 +1,4 @@
-import { mazius } from "@/app/font";
+import { mazius } from "@/font";
 import styles from "./Hero.module.css";
 
 const Hero = () => {

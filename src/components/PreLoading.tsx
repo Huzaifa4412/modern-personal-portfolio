@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import RevealText from "./RevealText";
-import { mazius } from "@/app/font";
+import { mazius } from "@/font";
 import { LoadingAnimation } from "@/utils/animate";
 import { TbLoader3 } from "react-icons/tb";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { mazius } from "@/app/font";
+import { mazius } from "@/font";
 import { Card } from "@/components/ServiceCards";
 import { serviceData } from "@/constants/serviceData";
 
