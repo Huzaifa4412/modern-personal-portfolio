@@ -1,30 +1,16 @@
-import localFont from 'next/font/local'
+import { Inter, Playfair_Display } from 'next/font/google'
 
-export const gilroy = localFont({
-    src: [
-        {
-            path: '/fonts/gilroy/Gilroy-Medium.ttf',
-            weight: '400',
-            style: 'normal',
-        },
-        {
-            path: '/fonts/gilroy/Gilroy-SemiBold.ttf',
-            weight: '600',
-            style: 'normal',
-        },
-    ],
+export const gilroy = Inter({
+    subsets: ['latin'],
+    weight: ['400', '600'],
     variable: '--font-gilroy',
     display: 'swap',
 })
 
-export const mazius = localFont({
-    src: [
-        {
-            path: '/fonts/mazius/Mazius-Extraitalic.otf',
-            weight: '400',
-            style: 'normal',
-        },
-    ],
+export const mazius = Playfair_Display({
+    subsets: ['latin'],
+    weight: ['400'],
+    style: ['italic'],
     variable: '--font-mazius',
     display: 'swap',
 })
