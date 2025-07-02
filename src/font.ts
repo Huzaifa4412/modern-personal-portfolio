@@ -1,13 +1,13 @@
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Outfit, Cormorant_Garamond } from 'next/font/google'
 
-export const gilroy = Inter({
+export const gilroy = Outfit({
     subsets: ['latin'],
     weight: ['400', '600'],
     variable: '--font-gilroy',
     display: 'swap',
 })
 
-export const mazius = Playfair_Display({
+export const mazius = Cormorant_Garamond({
     subsets: ['latin'],
     weight: ['400'],
     style: ['italic'],
