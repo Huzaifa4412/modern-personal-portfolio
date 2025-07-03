@@ -29,14 +29,14 @@ const PreLoading = () => {
           </h3>
         </div>
         <div className="center-heading absolute top-1/2 -translate-y-1/2">
-          <h1 className="text-[clamp(2rem,8vw,5rem)] font-bold md:text-[clamp(3rem,5vw,10rem)] [&>span]:block">
+          <h1 className="text-[clamp(4rem,12vw,7rem)] font-bold md:text-[clamp(3rem,5vw,10rem)] [&>span]:block">
             <RevealText
               ParentClass="w-screen"
               childClass="flex justify-center items-center gap-4"
             >
               <span className="inline-block">Huzzi</span>
               <span
-                className={`${mazius.className} inline-block pb-5`}
+                className={`${mazius.className} inline-block`}
                 style={{ color: "#14CF93" }}
               >
                 Byte

@@ -13,7 +13,7 @@ const MyServices = () => {
             Services
           </span>
         </h2>
-        <div className="services mt-20 flex w-full flex-wrap items-center justify-evenly gap-10">
+        <div className="services mt-20 flex w-full flex-nowrap items-center justify-evenly gap-10 overflow-x-auto">
           {serviceData.map((service, index) => {
             return <Card key={index} service={service} />;
           })}

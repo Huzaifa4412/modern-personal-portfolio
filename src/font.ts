@@ -1,4 +1,4 @@
-import { Urbanist, Dancing_Script } from 'next/font/google'
+import { Urbanist, Bangers } from 'next/font/google'
 
 export const gilroy = Urbanist({
     subsets: ['latin'],
@@ -7,9 +7,9 @@ export const gilroy = Urbanist({
     display: 'swap',
 })
 
-export const mazius = Dancing_Script({
+export const mazius = Bangers({
     subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
+    weight: '400',
     variable: '--font-mazius',
     display: 'swap',
 })

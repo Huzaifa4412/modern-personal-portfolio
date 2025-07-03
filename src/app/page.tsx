@@ -4,7 +4,9 @@ import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
 import Navbar from "@/components/Navbar";
 import MyCreation from "@/app/MyCreation";
-import MyServices from "@/components/MyServices";
+
+import AboutMeText from "@/components/AboutMeText";
+import Works from "@/components/Works";
 
 const page = () => {
   return (
@@ -14,8 +16,9 @@ const page = () => {
         <Navbar />
         <Hero />
         <AboutMe />
+        <AboutMeText />
+        <Works />
         <MyCreation />
-        <MyServices />
       </div>
     </>
   );

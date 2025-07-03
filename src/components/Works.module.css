@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Founder";
+    src: url("/font/founder.ttf");
+}
+
+.topPart,
+.bottomPart {
+    font-family: Founder, sans-serif;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    font-size: 20vw;
+    background: #fff;
+    text-transform: uppercase;
+    overflow: hidden !important;
+    background-color: #fff;
+
+}
+
+
+.topH,
+.bottomH {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.topH {
+    top: 100%;
+}
+
+.bottomH {
+    top: 0%;
+}
