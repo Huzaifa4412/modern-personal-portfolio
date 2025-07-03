@@ -5,8 +5,8 @@ export const TextReveal = (el: any, timeLine?: GSAPTimeline) => {
     // @ts-ignore
     tl.from(el.children, {
         x: 100,
-        stagger: 0.4,
-        duration: 1.5,
+        stagger: 0.25,
+        duration: 1,
         ease: "circ.inOut",
     })
     tl.to(el, {
@@ -29,7 +29,7 @@ export const LoadingAnimation = (fullScreen: HTMLElement, elem1: HTMLElement) =>
     tl.to(
         fullScreen,
         {
-            duration: 2,
+            duration: 1.5,
             height: 0,
             ease: "Expo.easeInOut",
         },
@@ -41,7 +41,7 @@ export const LoadingAnimation = (fullScreen: HTMLElement, elem1: HTMLElement) =>
                 height: "100%",
                 top: 0,
                 ease: "expo.inOut",
-                duration: 2,
+                duration: 1.2,
             },
             "same"
         )
