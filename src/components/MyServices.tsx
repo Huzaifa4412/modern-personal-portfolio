@@ -2,14 +2,15 @@ import React from "react";
 import { mazius } from "@/font";
 import { Card } from "@/components/ServiceCards";
 import { serviceData } from "@/constants/serviceData";
+import clsx from "clsx";
 
 const MyServices = () => {
   return (
     <>
       <div className={"container h-full w-full py-20"}>
-        <h2 className={"text-8xl"}>
+        <h2 className={"text-8xl text-white"}>
           My{" "}
-          <span className={`text-[#14CF93] ${mazius.className} `}>
+          <span className={clsx("text-[#14CF93]", mazius.className)}>
             Services
           </span>
         </h2>

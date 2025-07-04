@@ -63,6 +63,13 @@ const Works = () => {
         },
         "same",
       )
+      .to(
+        ".bottomPart",
+        {
+          height: 0,
+        },
+        "same",
+      )
       .from(
         ".main-content .services",
         {
