@@ -17,22 +17,13 @@ const Services = () => {
       el.addEventListener("mousemove", (event: Event) => {
         const mouseEvent = event as MouseEvent;
         gsap.to(el.children[1], {
-          x: mouseEvent.clientX,
+          x: mouseEvent.clientX - 100,
           //   y: mouseEvent.clientY,
           duration: 0.5,
           ease: "power3.out",
         });
       });
       el.addEventListener("mouseleave", () => {
-        el.addEventListener("mousemove", (event: Event) => {
-          const mouseEvent = event as MouseEvent;
-          gsap.to(el.children[1], {
-            x: mouseEvent.clientX,
-            //   y: mouseEvent.clientY,
-            duration: 0.5,
-            ease: "power3.out",
-          });
-        });
         gsap.to(el.children[1], { opacity: 0, duration: 0.5 });
       });
     });
@@ -52,7 +43,7 @@ const Services = () => {
           <Image
             src={"/khizar-services/img1.jpeg"}
             alt="seo"
-            className="h-[200px] w-[200px] !-translate-x-[150%] rounded-full object-cover opacity-0"
+            className="h-[200px] w-[200px] rounded-full object-cover opacity-0"
             width={200}
             height={200}
           />
@@ -62,7 +53,7 @@ const Services = () => {
           <Image
             src={"/khizar-services/img2.jpeg"}
             alt="seo"
-            className="h-[200px] w-[200px] !-translate-x-[150%] rounded-full object-cover opacity-0"
+            className="h-[200px] w-[200px] rounded-full object-cover opacity-0"
             width={200}
             height={200}
           />
@@ -73,7 +64,7 @@ const Services = () => {
           <Image
             src={"/khizar-services/img3.jpeg"}
             alt="seo"
-            className="h-[200px] w-[200px] !-translate-x-[150%] rounded-full object-cover opacity-0"
+            className="h-[200px] w-[200px] rounded-full object-cover opacity-0"
             width={200}
             height={200}
           />
@@ -84,7 +75,7 @@ const Services = () => {
           <Image
             src={"/khizar-services/img4.jpeg"}
             alt="seo"
-            className="h-[200px] w-[200px] !-translate-x-[150%] rounded-full object-cover opacity-0"
+            className="h-[200px] w-[200px] rounded-full object-cover opacity-0"
             width={200}
             height={200}
           />
