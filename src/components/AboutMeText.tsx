@@ -38,19 +38,7 @@ const AboutMeText = () => {
     );
   }, []);
 
-  const text = `Hi, I'm Huzaifa Mukhtar. I'm a creative problem solver with a
-        passion for building innovative solutions that push the boundaries of
-        what's possible. As a designer and developer, I bring ideas to life
-        through code. I'm particularly interested in exploring the
-        intersection of technology and design, and I'm always looking for
-        new ways to leverage AI and automation to create more efficient and
-        effective solutions. Currently, I'm learning Python and expanding
-        my skills in machine learning and data science. When I'm not
-        coding, you can find me exploring new design trends, experimenting with
-        novel technologies, or simply enjoying a good cup of coffee. I'm
-        excited to share my work and connect with like-minded individuals who
-        share my passion for creativity, innovation, and technological
-        advancement.`;
+  const text = `Hi, I'm Huzaifa Mukhtar. As a designer and developer, I bring ideas to life through code. I'm passionate about exploring the intersection of technology and design, and leveraging AI and automation to create innovative solutions. Currently, I'm learning Python and expanding my skills in machine learning and data science. Let's connect and share our passion for creativity and technological advancement.`;
 
   return (
     <div className="min-h-[100vh] bg-[#0f0f0f] text-[clamp(30px,6vw,60px)] text-white">

@@ -3,7 +3,7 @@ import Loader from "./Loader";
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
 import Navbar from "@/components/Navbar";
-import MyCreation from "@/app/MyCreation";
+import MyCreation from "@/components/MyCreation";
 
 import AboutMeText from "@/components/AboutMeText";
 import Works from "@/components/Works";
