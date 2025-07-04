@@ -14,15 +14,25 @@ const Services = () => {
       el.addEventListener("mouseenter", () => {
         gsap.to(el.children[1], { opacity: 1, duration: 0.5 });
       });
-      el.addEventListener("mousemove", (dets) => {
+      el.addEventListener("mousemove", (event: Event) => {
+        const mouseEvent = event as MouseEvent;
         gsap.to(el.children[1], {
-          x: dets.x,
-          //   y: dets.y,
+          x: mouseEvent.clientX,
+          //   y: mouseEvent.clientY,
           duration: 0.5,
           ease: "power3.out",
         });
       });
       el.addEventListener("mouseleave", () => {
+        el.addEventListener("mousemove", (event: Event) => {
+          const mouseEvent = event as MouseEvent;
+          gsap.to(el.children[1], {
+            x: mouseEvent.clientX,
+            //   y: mouseEvent.clientY,
+            duration: 0.5,
+            ease: "power3.out",
+          });
+        });
         gsap.to(el.children[1], { opacity: 0, duration: 0.5 });
       });
     });

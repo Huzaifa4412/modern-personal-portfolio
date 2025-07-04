@@ -1,45 +1,45 @@
 .animatedText {
 
-    animation: fills 1s ease-in forwards 10s;
+    animation: fills 1s ease-in forwards 9s;
 }
 
 .animatedText path:nth-child(1) {
     stroke-dasharray: 315.4770812988281;
     stroke-dashoffset: 315.4770812988281;
-    animation: animates 1s ease-in forwards 7s;
+    animation: animates 1s ease-in forwards 6s;
 }
 
 
 .animatedText path:nth-child(2) {
     stroke-dasharray: 484.80609130859375;
     stroke-dashoffset: 484.80609130859375;
-    animation: animates 1s ease-in forwards 7.3s;
+    animation: animates 1s ease-in forwards 6.3s;
 
 }
 
 .animatedText path:nth-child(3) {
     stroke-dasharray: 528.1263427734375;
     stroke-dashoffset: 528.1263427734375;
-    animation: animates 1s ease-in forwards 7.6s;
+    animation: animates 1s ease-in forwards 6.6s;
 }
 
 .animatedText path:nth-child(4) {
     stroke-dasharray: 291.94293212890625;
     stroke-dashoffset: 291.94293212890625;
-    animation: animates 1s ease-in forwards 7.9s;
+    animation: animates 1s ease-in forwards 6.9s;
 }
 
 
 .animatedText path:nth-child(5) {
     stroke-dasharray: 277.3301086425781;
     stroke-dashoffset: 277.3301086425781;
-    animation: animates 1s ease-in forwards 8.2s;
+    animation: animates 1s ease-in forwards 7.2s;
 }
 
 .animatedText path:nth-child(6) {
     stroke-dasharray: 559.4695434570312;
     stroke-dashoffset: 559.4695434570312;
-    animation: animates 1s ease-in forwards 8.5s;
+    animation: animates 1s ease-in forwards 7.5s;
 }
 
 @keyframes animates {

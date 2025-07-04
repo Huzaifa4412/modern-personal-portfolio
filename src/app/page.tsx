@@ -1,5 +1,5 @@
 import React from "react";
-// import Loader from "./Loader";
+import Loader from "./Loader";
 import Hero from "@/components/Hero";
 import AboutMe from "@/components/AboutMe";
 import Navbar from "@/components/Navbar";
@@ -13,7 +13,7 @@ const page = () => {
   return (
     <>
       <div className={"h-full w-full overflow-hidden"}>
-        {/* <Loader /> */}
+        <Loader />
         <Navbar />
         <Hero />
         <AboutMe />
