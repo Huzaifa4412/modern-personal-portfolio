@@ -6,6 +6,7 @@ import { gilroy } from "../font";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import { SmoothScroll } from "@/app/SmoothScroll";
 import Cursor from "@/components/Cursor";
+import StyledComponentsRegistry from "@/lib/registry";
 
 export const metadata: Metadata = {
   title: "Huzaifa | Portfolio",
@@ -22,7 +23,9 @@ export default function RootLayout({
     <html lang="en" className={gilroy.variable} suppressHydrationWarning>
       <body suppressHydrationWarning className={`antialiased`}>
         <Cursor />
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </SmoothScroll>
       </body>
     </html>
   );
