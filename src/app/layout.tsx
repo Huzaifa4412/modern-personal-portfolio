@@ -7,6 +7,7 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 import { SmoothScroll } from "@/app/SmoothScroll";
 import StyledComponentsRegistry from "@/lib/registry";
 import CursorProvider from "./CursorProvider";
+import ChatBot from "@/components/ChatBot";
 
 export const metadata: Metadata = {
   title: "Huzaifa | Portfolio",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body suppressHydrationWarning className={`antialiased`}>
         <CursorProvider>
           <SmoothScroll>
+            <ChatBot />
             <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
           </SmoothScroll>
         </CursorProvider>
