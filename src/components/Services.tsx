@@ -3,6 +3,7 @@
 import { mazius } from "@/font";
 import clsx from "clsx";
 import React, { useEffect, useRef } from "react";
+import { useCallback } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -20,7 +21,16 @@ const services: Service[] = [
 
 const Services: React.FC = () => {
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
-
+  const setImageRef = useCallback(
+    (index: number, el: HTMLImageElement | null) => {
+      if (imageRefs.current[index]) {
+        imageRefs.current[index] = el;
+      } else {
+        imageRefs.current.push(el);
+      }
+    },
+    [imageRefs],
+  );
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>(".elms");
 
@@ -36,7 +46,7 @@ const Services: React.FC = () => {
         gsap.to(img, {
           x: relativeX - img.clientWidth / 2,
           duration: 0.4,
-          ease: "circ.in",
+          ease: "linear",
         });
       };
 
@@ -90,7 +100,7 @@ const Services: React.FC = () => {
           <div key={index} className="elms relative overflow-hidden">
             <h3>{service.title}</h3>
             <Image
-              ref={(el) => (imageRefs.current[index] = el)}
+              ref={(el) => setImageRef(index, el)}
               src={`/khizar-services/${service.img}`}
               alt={service.title}
               width={200}
