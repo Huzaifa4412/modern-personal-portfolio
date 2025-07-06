@@ -5,18 +5,18 @@ export const navItems = [
     },
     {
         name: "Playbook",
-        href: "/playbook",
+        href: "/",
     },
     {
         name: "About",
-        href: "/about",
+        href: "/",
     },
     {
         name: "Craft",
-        href: "/craft",
+        href: "/",
     },
     {
         name: "Connect",
-        href: "/connect",
+        href: "/",
     },
 ];
