@@ -3,7 +3,6 @@
 import type React from "react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useChat } from "ai/react";
 import ReactMarkdown from "react-markdown";
 
 import {
@@ -77,19 +76,69 @@ const ChatBot: React.FC<ChatBotProps> = ({
     ...colors,
   };
 
-  // Chat functionality
-  const {
-    messages,
-    input,
-    handleInputChange,
-    handleSubmit,
-    isLoading,
-    setInput,
-  } = useChat({
-    onFinish: () => {
+  // Custom chat state (non-streaming)
+  const [messages, setMessages] = useState<
+    Array<{ id: string; role: "user" | "assistant"; content: string }>
+  >([]);
+  const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  const handleSubmit = async (messageContent?: string) => {
+    const contentToSend = messageContent || input;
+    if (!contentToSend.trim() || isLoading) return;
+
+    const userMessage = {
+      id: Date.now().toString(),
+      role: "user" as const,
+      content: contentToSend,
+    };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+    setIsLoading(true);
+    setShowSuggestions(false);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [...messages, userMessage].map((m) => ({
+            role: m.role,
+            content: m.content,
+          })),
+        }),
+      });
+
+      if (!response.ok) throw new Error("Failed to get response");
+
+      const data = await response.json();
+      const assistantMessage = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant" as const,
+        content:
+          data.content ||
+          data.text ||
+          "Sorry, I could not process your request.",
+      };
+
+      setMessages((prev) => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error("Chat error:", error);
+      const errorMessage = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant" as const,
+        content: "Sorry, something went wrong. Please try again.",
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
       setTimeout(() => inputRef.current?.focus(), 100);
-    },
-  });
+    }
+  };
 
   // Auto-scroll to bottom
   const scrollToBottom = () => {
@@ -110,18 +159,13 @@ const ChatBot: React.FC<ChatBotProps> = ({
   const handleSuggestionClick = (suggestion: string) => {
     setInput(suggestion);
     setShowSuggestions(false);
-    const syntheticEvent = {
-      preventDefault: () => {},
-      target: { message: { value: suggestion } },
-    } as any;
-    handleSubmit(syntheticEvent);
+    handleSubmit(suggestion);
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (input.trim() && !isLoading) {
-      handleSubmit(e);
-      setShowSuggestions(false);
+      handleSubmit();
     }
   };
 
@@ -181,27 +225,6 @@ const ChatBot: React.FC<ChatBotProps> = ({
     >
       {children}
     </button>
-  );
-
-  // Custom Input Component
-  const CustomInput: React.FC<{
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    placeholder: string;
-    disabled?: boolean;
-    className?: string;
-    style?: React.CSSProperties;
-  }> = ({ value, onChange, placeholder, disabled, className, style }) => (
-    <input
-      ref={inputRef}
-      type="text"
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      disabled={disabled}
-      className={`outline-none ${className}`}
-      style={style}
-    />
   );
 
   return (
@@ -415,9 +438,9 @@ const ChatBot: React.FC<ChatBotProps> = ({
                                     : "none",
                               }}
                             >
-                              <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                              <div className="text-sm leading-relaxed whitespace-pre-wrap">
                                 <ReactMarkdown>{message.content}</ReactMarkdown>
-                              </p>
+                              </div>
                             </div>
 
                             {message.role === "user" && (
@@ -485,12 +508,14 @@ const ChatBot: React.FC<ChatBotProps> = ({
                         }}
                       >
                         <form onSubmit={onSubmit} className="flex gap-2">
-                          <CustomInput
+                          <input
+                            ref={inputRef}
+                            type="text"
                             value={input}
                             onChange={handleInputChange}
                             placeholder={placeholder}
                             disabled={isLoading}
-                            className="h-10 flex-1 rounded-full border-2 px-4 py-2"
+                            className="h-10 flex-1 rounded-full border-2 px-4 py-2 transition-colors outline-none focus:border-blue-400"
                             style={{
                               backgroundColor: theme.surface,
                               borderColor: theme.border,

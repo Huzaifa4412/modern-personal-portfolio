@@ -1,5 +1,5 @@
 import { google } from "@ai-sdk/google";
-import { streamText } from "ai";
+import { generateText } from "ai";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -45,10 +45,10 @@ RULES:
 `;
 
 export async function POST(req: Request) {
-    try {
-        const { messages } = await req.json();
+  try {
+    const { messages } = await req.json();
 
-        const systemPrompt = `${WEBSITE_CONTEXT}
+    const systemPrompt = `${WEBSITE_CONTEXT}
 
 Important Behavior Guidelines:
 - You MUST only help with questions related to Huzaifa Mukhtar’s portfolio, services, projects, or how to hire him.
@@ -58,17 +58,21 @@ Important Behavior Guidelines:
 - Current context: The visitor is on Huzaifa Mukhtar’s portfolio site and may be exploring services or projects.
 `;
 
-        const result = await streamText({
-            model: google("gemini-2.5-flash"), // ✅ Fast + high quality + free tier
-            system: systemPrompt,
-            messages,
-            temperature: 0.7,
-            maxTokens: 500,
-        });
+    const result = await generateText({
+      model: google("gemini-2.5-flash"), // ✅ Fast + high quality + free tier
+      system: systemPrompt,
+      messages,
+      temperature: 0.7,
+      maxTokens: 500,
+    });
 
-        return result.toDataStreamResponse();
-    } catch (error) {
-        console.error("Chatbot Error:", error);
-        return new Response("Internal error while processing chat", { status: 500 });
-    }
+    return new Response(JSON.stringify({
+      content: result.text
+    }), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    console.error("Chatbot Error:", error);
+    return new Response("Internal error while processing chat", { status: 500 });
+  }
 }
