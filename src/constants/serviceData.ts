@@ -1,72 +1,52 @@
 export interface ServiceCard {
-    image_path: string;
-    icon_path: string;
-    icon_name: string;
     title: string;
     description: string;
-    price: string;
+    tags: string[];
+    story: string;
 }
 
 export const serviceData: ServiceCard[] = [
-    // card 1 data
     {
-        image_path: "/khizar-services/img2.jpeg",
-        icon_path: "/khizar-services/icon1.png",
-        icon_name: "On-Page SEO Optimization",
-        title: "On-Page SEO Optimization",
-        description: `Title, meta description, heading tags optimization
-Image alt texts & file names
-Internal linking improvements
-Schema markup implementation
-and more.....`,
-        price: "$150–$800 per site",
+        "title": "Web Development",
+        "description": "Modern, fast & SEO-friendly websites built with React, Next.js, and TailwindCSS.",
+        "tags": ["React", "Next.js", "TailwindCSS", "GSAP"],
+        "story": "// Client: \"I need a fast website.\"\n// Me: \"On it!\"\ndevelopWebsite(\"fast\", \"modern\", \"responsive\");"
     },
-    // card 2 data
     {
-        image_path: "/khizar-services/img5.jpeg",
-        icon_path: "/khizar-services/icon2.png",
-        icon_name: "Technical Fixes & Implementation",
-        title: "Technical Fixes & Implementation",
-        description: `Fix crawl errors & broken links
-Resolve duplicate content
-Implement redirects & canonical tags
-Improve page speed (caching, compression, image optimization) and more...`,
-        price: "$200–$1,000 per project",
+        "title": "AI Chatbots",
+        "description": "Custom AI chatbots powered by OpenAI to handle customer queries 24/7.",
+        "tags": ["OpenAI", "Python", "Node.js"],
+        "story": "// Client: \"I want a friendly chatbot.\"\n// Me: \"Say no more!\"\ncreateChatbot(\"OpenAI\", \"friendly\", \"24/7 support\");"
     },
-    // card 3 data
     {
-        image_path: "/khizar-services/img3.jpeg",
-        icon_path: "/khizar-services/icon3.png",
-        icon_name: "Local SEO Optimization",
-        title: "Local SEO Optimization",
-        description: `Google My Business optimization
-NAP (Name, Address, Phone) consistency
-Local citations building
-Local keyword optimization and more...`,
-        price: "$150–$700 per location",
+        "title": "AI Automation",
+        "description": "Automating daily tasks and business workflows using AI & Python scripts.",
+        "tags": ["Python", "Automation", "APIs"],
+        "story": "// Client: \"Can you automate my daily reports?\"\n// Me: \"Sure!\"\nautomateTask(\"dailyReports\");"
     },
-    // card 4 data
     {
-        image_path: "/khizar-services/img2.jpeg",
-        icon_path: "/khizar-services/icon5.png",
-        icon_name: "Keyword Research & Mapping",
-        title: "Keyword Research & Mapping",
-        description: `Niche-specific keyword discovery
-Search volume & competition analysis
-Keyword intent mapping for pages
-Keyword plan document and more..`,
-        price: "$100–$500 per project",
+        "title": "Graphics Designing",
+        "description": "Creative social media posts, banners, and branding materials.",
+        "tags": ["Photoshop", "Illustrator", "Canva"],
+        "story": "// Client: \"Need a modern logo.\"\n// Me: \"Designing now!\"\ndesignGraphics(\"logo\", \"modern\", \"brand-focused\");"
     },
-    // card 5 data
     {
-        image_path: "/khizar-services/img1.jpeg",
-        icon_path: "/khizar-services/icon4.png",
-        icon_name: "Link Building",
-        title: "Link Building",
-        description: `Research relevant sites for outreach
-Craft custom outreach emails
-Secure high-authority backlinks
-Provide backlink report and more....`,
-        price: "$50–$300 per link",
+        "title": "AI Calling Agents",
+        "description": "Smart AI-powered calling agents for automated customer communication.",
+        "tags": ["AI", "Voice API", "Python"],
+        "story": "// Client: \"Need an AI agent for calls.\"\n// Me: \"Setting it up!\"\nsetupAICallingAgent(\"customerSupport\", \"24/7 active\");"
     },
-];
+    {
+        "title": "N8N Workflows",
+        "description": "Build powerful automation workflows using N8N for businesses and startups.",
+        "tags": ["N8N", "APIs", "Automation"],
+        "story": "// Client: \"Can you integrate all my apps?\"\n// Me: \"Absolutely!\"\ncreateWorkflow(\"GoogleSheets\", \"Slack\", \"CRM\");"
+    },
+    {
+        "title": "Python Custom Automation",
+        "description": "Custom Python scripts for scraping, data processing, and repetitive task automation.",
+        "tags": ["Python", "Pandas", "Scrapy"],
+        "story": "// Client: \"I need data scraping automation.\"\n// Me: \"Writing a script now!\"\nscrapeData(\"ecommerceSite\", limit=5000);"
+    }
+]
+

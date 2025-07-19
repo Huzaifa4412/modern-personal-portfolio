@@ -19,7 +19,7 @@ const PreLoading = () => {
     <div className="main fixed! top-0! left-0! z-[999]! h-screen w-screen">
       <div
         ref={fullScr}
-        className="full-screen h-screen w-full bg-zinc-900 text-white"
+        className="full-screen h-[100dvh] w-full bg-zinc-900 text-white lg:h-screen"
       >
         <div className="absolute top-[5%] left-1/2 flex -translate-x-1/2 flex-col items-center">
           <RevealText>Design Portfolio</RevealText>

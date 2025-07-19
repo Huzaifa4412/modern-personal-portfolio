@@ -14,7 +14,6 @@ const Hero = () => {
           FOR Freelance Worldwide
         </h5>
       </div>
-
       <div className="title-row mt-4 flex flex-col items-start gap-6 md:mt-0 md:flex-row md:items-end md:justify-between md:gap-0">
         <h5 className="order-2 text-sm text-zinc-500 md:order-1 md:text-lg">
           Empowering Ideas Through Code

@@ -20,7 +20,6 @@ const page = () => {
         <AboutMeText />
         <Works />
         <Services />
-        {/* <MyCreation /> */}
       </div>
     </>
   );

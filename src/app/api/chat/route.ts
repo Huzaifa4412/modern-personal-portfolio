@@ -1,5 +1,5 @@
 import { google } from "@ai-sdk/google";
-import { generateText } from "ai";
+import { streamText } from "ai";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -58,7 +58,7 @@ Important Behavior Guidelines:
 - Current context: The visitor is on Huzaifa Mukhtar’s portfolio site and may be exploring services or projects.
 `;
 
-    const result = await generateText({
+    const result = await streamText({
       model: google("gemini-2.5-flash"), // ✅ Fast + high quality + free tier
       system: systemPrompt,
       messages,
@@ -66,11 +66,7 @@ Important Behavior Guidelines:
       maxTokens: 500,
     });
 
-    return new Response(JSON.stringify({
-      content: result.text
-    }), {
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return result.toDataStreamResponse();
   } catch (error) {
     console.error("Chatbot Error:", error);
     return new Response("Internal error while processing chat", { status: 500 });

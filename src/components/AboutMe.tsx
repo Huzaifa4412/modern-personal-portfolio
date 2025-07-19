@@ -37,10 +37,10 @@ const AboutMe = () => {
   return (
     <div
       ref={containerRef}
-      className="container my-25 flex h-[80vh] w-full flex-col items-center justify-between lg:flex-row"
+      className="container my-25 flex h-[80vh] w-full flex-col items-center justify-between gap-20 md:gap-0 lg:flex-row"
     >
       <div className="content w-full lg:w-1/2">
-        <h2 className="text-4xl font-bold text-zinc-800 uppercase md:text-5xl">
+        <h2 className="text-3xl font-bold text-zinc-800 uppercase sm:text-4xl md:text-5xl">
           I am Huzaifa Mukhtar. I create{" "}
           <span className={`text-[#14CF93] ${mazius.className} capitalize`}>
             unconventional

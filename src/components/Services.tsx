@@ -13,10 +13,10 @@ interface Service {
 }
 
 const services: Service[] = [
-  { title: "SEO Optimization", img: "img1.jpeg" },
-  { title: "Web Development", img: "img2.jpeg" },
-  { title: "Graphic Design", img: "img3.jpeg" },
-  { title: "AI & Automation", img: "img4.jpeg" },
+  { title: "Web Development", img: "2.png" },
+  { title: "AI Chatbots", img: "4.png" },
+  { title: "Graphic Design", img: "1.png" },
+  { title: "AI & Automation", img: "3.png" },
 ];
 
 const Services: React.FC = () => {
@@ -91,21 +91,23 @@ const Services: React.FC = () => {
       <h2 className={clsx("container mb-20 text-8xl text-white")}>
         My{" "}
         <span className={clsx("text-[#14CF93]", mazius.className)}>
-          Services
+          Specialty
         </span>
       </h2>
 
       <div className="main relative container divide-y divide-white text-5xl [&>div]:flex [&>div]:h-[200px] [&>div]:items-center [&>div]:justify-start [&>div]:text-white">
         {services.map((service, index) => (
           <div key={index} className="elms relative overflow-hidden">
-            <h3>{service.title}</h3>
+            <h3 className="absolute left-0 z-[2] mix-blend-difference">
+              {service.title}
+            </h3>
             <Image
               ref={(el) => setImageRef(index, el)}
-              src={`/khizar-services/${service.img}`}
+              src={`/my-services/${service.img}`}
               alt={service.title}
               width={200}
               height={200}
-              className="pointer-events-none absolute top-1/2 h-[200px] w-[200px] -translate-y-1/2 rounded-full object-cover opacity-0 transition-opacity duration-300"
+              className="pointer-events-none absolute top-1/2 z-[1] h-[200px] w-[200px] -translate-y-1/2 rounded-full bg-linear-to-r bg-radial-[at_25%_25%] from-white to-zinc-900 to-75% object-cover opacity-0 transition-opacity duration-300"
             />
           </div>
         ))}

@@ -19,9 +19,7 @@ const RevealText = ({
   }, []);
 
   return (
-    <span
-      className={`parent block overflow-hidden font-medium  ${ParentClass}`}
-    >
+    <span className={`parent block overflow-hidden font-medium ${ParentClass}`}>
       <span ref={childRef} className={`text-reveal child block ${childClass} `}>
         {children}
       </span>

@@ -1,4 +1,4 @@
-import { Urbanist, Bangers } from 'next/font/google'
+import { Urbanist, Space_Mono } from 'next/font/google'
 
 export const gilroy = Urbanist({
     subsets: ['latin'],
@@ -7,7 +7,7 @@ export const gilroy = Urbanist({
     display: 'swap',
 })
 
-export const mazius = Bangers({
+export const mazius = Space_Mono({
     subsets: ['latin'],
     weight: '400',
     variable: '--font-mazius',

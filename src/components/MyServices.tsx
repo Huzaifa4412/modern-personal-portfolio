@@ -1,8 +1,11 @@
+'use client'
+
 import React from "react";
 import { mazius } from "@/font";
-import { Card } from "@/components/ServiceCards";
 import { serviceData } from "@/constants/serviceData";
 import clsx from "clsx";
+import ServiceCard from "@/components/service-card";
+import { motion } from "framer-motion";
 
 const MyServices = () => {
   return (
@@ -14,11 +17,21 @@ const MyServices = () => {
             Services
           </span>
         </h2>
-        <div className="services mt-20 flex w-full flex-nowrap items-center justify-evenly gap-10 overflow-x-auto">
-          {serviceData.map((service, index) => {
-            return <Card key={index} service={service} />;
-          })}
-        </div>
+        <motion.div
+            className="services mt-20 flex w-full flex-nowrap items-center justify-start gap-10 cursor-grab"
+            drag="x"
+            dragConstraints={{ left: -500, right: 0 }} // left me total scrollable width adjust karo
+        >
+          {serviceData.map((service, index) => (
+              <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  tags={service.tags}
+                  story={service.story}
+              />
+          ))}
+        </motion.div>
       </div>
     </>
   );
