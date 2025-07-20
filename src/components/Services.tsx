@@ -88,7 +88,7 @@ const Services: React.FC = () => {
 
   return (
     <div className="main h-auto w-full bg-zinc-800">
-      <h2 className={clsx("container mb-20 text-8xl text-white")}>
+      <h2 className={clsx("container mb-20 text-6xl text-white")}>
         My{" "}
         <span className={clsx("text-[#14CF93]", mazius.className)}>
           Specialty

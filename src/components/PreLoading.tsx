@@ -29,7 +29,7 @@ const PreLoading = () => {
           </h3>
         </div>
         <div className="center-heading absolute top-1/2 -translate-y-1/2">
-          <h1 className="text-[clamp(3.5rem,10vw,7rem)] font-bold md:text-[clamp(3rem,5vw,10rem)] [&>span]:block">
+          <h1 className="text-[clamp(3rem,8vw,7rem)] font-bold md:text-[clamp(3rem,5vw,10rem)] [&>span]:block">
             <RevealText
               ParentClass="w-screen"
               childClass="flex justify-center items-center gap-4"

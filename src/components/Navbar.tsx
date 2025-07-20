@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { navItems } from "@/constants/navItems";
 import styles from "./Navbar.module.css";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -143,8 +144,14 @@ const Navbar = () => {
       <div className="md:hidden">
         {/* Mobile Header */}
         <div className="flex items-center justify-between px-6 py-4">
-          <div className="text-xl font-bold text-zinc-900">
-            {navItems[0]?.name || "Logo"}
+          <div className="w-[50%] text-xl font-bold">
+            <Image
+              src="/logo.jpeg"
+              alt="Logo"
+              className="h-auto w-full rounded-full bg-blend-difference"
+              width={50}
+              height={50}
+            />
           </div>
 
           {/* Hamburger Menu Button */}
