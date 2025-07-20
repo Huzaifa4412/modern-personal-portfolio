@@ -58,15 +58,19 @@ Important Behavior Guidelines:
 - Current context: The visitor is on Huzaifa Mukhtar’s portfolio site and may be exploring services or projects.
 `;
 
-    const result = await streamText({
-      model: google("gemini-2.5-flash"), // ✅ Fast + high quality + free tier
+    const result = streamText({
+      model: google("gemini-2.5-flash"),
       system: systemPrompt,
       messages,
       temperature: 0.7,
       maxTokens: 500,
     });
 
-    return result.toDataStreamResponse();
+    const text = await result.text;
+    return new Response(text, {
+      status: 200,
+      headers: { "Content-Type": "text/plain" },
+    });
   } catch (error) {
     console.error("Chatbot Error:", error);
     return new Response("Internal error while processing chat", { status: 500 });

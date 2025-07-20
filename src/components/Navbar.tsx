@@ -144,11 +144,11 @@ const Navbar = () => {
       <div className="md:hidden">
         {/* Mobile Header */}
         <div className="flex items-center justify-between px-6 py-4">
-          <div className="w-auto text-xl font-bold">
+          <div className="h-[100px] w-[200px] bg-red-500 text-xl font-bold">
             <Image
-              src="/logo.jpeg"
+              src="/logo_main.svg"
               alt="Logo"
-              className="h-auto w-full rounded-full bg-blend-difference"
+              className="h-full w-full object-cover object-[center_40%]"
               width={50}
               height={50}
             />
