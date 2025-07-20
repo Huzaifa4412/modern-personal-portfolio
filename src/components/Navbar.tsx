@@ -144,7 +144,7 @@ const Navbar = () => {
       <div className="md:hidden">
         {/* Mobile Header */}
         <div className="flex items-center justify-between px-6 py-4">
-          <div className="w-[50%] text-xl font-bold">
+          <div className="w-auto text-xl font-bold">
             <Image
               src="/logo.jpeg"
               alt="Logo"
