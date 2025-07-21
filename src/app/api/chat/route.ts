@@ -1,10 +1,8 @@
 import { google } from "@ai-sdk/google";
-import { streamText } from "ai";
+import { generateText } from "ai";
 
-// Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
-// Website knowledge base: tailored to Huzaifa Mukhtar
 const WEBSITE_CONTEXT = `
 You are a helpful and professional assistant for Huzaifa Mukhtar's personal portfolio website.
 
@@ -52,13 +50,9 @@ export async function POST(req: Request) {
 
 Important Behavior Guidelines:
 - You MUST only help with questions related to Huzaifa Mukhtar’s portfolio, services, projects, or how to hire him.
-- If someone asks unrelated questions, politely say:
-  "I'm designed to help with questions about Huzaifa Mukhtar’s portfolio and services. How can I help you today?"
-- Act helpful, polite, and professional.
-- Current context: The visitor is on Huzaifa Mukhtar’s portfolio site and may be exploring services or projects.
 `;
 
-    const result = streamText({
+    const { text } = await generateText({
       model: google("gemini-2.5-flash"),
       system: systemPrompt,
       messages,
@@ -66,13 +60,18 @@ Important Behavior Guidelines:
       maxTokens: 500,
     });
 
-    const text = await result.text;
-    return new Response(text, {
-      status: 200,
-      headers: { "Content-Type": "text/plain" },
-    });
+    return new Response(
+      JSON.stringify({ content: text }), // ✅ UI expects "content"
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
   } catch (error) {
     console.error("Chatbot Error:", error);
-    return new Response("Internal error while processing chat", { status: 500 });
+    return new Response(
+      JSON.stringify({ content: "Sorry, something went wrong." }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }
