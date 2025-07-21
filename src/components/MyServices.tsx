@@ -5,7 +5,7 @@ import { mazius } from "@/font";
 import { serviceData } from "@/constants/serviceData";
 import clsx from "clsx";
 import ServiceCard from "@/components/service-card";
-import { motion, PanInfo, useMotionValue } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 const MyServices = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -49,19 +49,19 @@ const MyServices = () => {
     setIsDragging(true);
   };
 
-  const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
-  ) => {
-    setIsDragging(false);
-  };
+  // const handleDragEnd = (
+  //   event: MouseEvent | TouchEvent | PointerEvent,
+  //   info: PanInfo,
+  // ) => {
+  //   setIsDragging(false);
+  // };
 
-  const handleDrag = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
-  ) => {
-    // Optional: Add custom drag behavior here
-  };
+  // const handleDrag = (
+  //   event: MouseEvent | TouchEvent | PointerEvent,
+  //   info: PanInfo,
+  // ) => {
+  //   // Optional: Add custom drag behavior here
+  // };
 
   return (
     <div className="container h-full w-full py-20">
@@ -88,8 +88,8 @@ const MyServices = () => {
           dragElastic={0.2}
           dragMomentum={true} // Enable momentum for smoother feel
           onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-          onDrag={handleDrag}
+          // onDragEnd={handleDragEnd}
+          // onDrag={handleDrag}
           whileDrag={{
             scale: 0.98, // ✅ Subtle scale effect while dragging
           }}
