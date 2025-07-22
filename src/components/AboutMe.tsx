@@ -37,7 +37,7 @@ const AboutMe = () => {
   return (
     <div
       ref={containerRef}
-      className="container my-25 flex h-[80vh] w-full flex-col items-center justify-between gap-20 md:gap-0 lg:flex-row"
+      className="relative container my-25 flex h-[80vh] w-full flex-col items-center justify-between gap-20 md:gap-0 lg:flex-row"
     >
       <div className="content w-full lg:w-1/2">
         <h2 className="text-3xl font-bold text-zinc-800 uppercase sm:text-4xl md:text-5xl">
@@ -51,7 +51,7 @@ const AboutMe = () => {
 
       <div
         ref={imageRef}
-        className="images relative mt-10 flex h-full w-full rotate-[-10deg] items-center justify-center"
+        className="relative mt-10 flex h-full w-full rotate-[-10deg] items-center justify-center"
       >
         <Image
           src="/images/hero-images/1.jpeg"

@@ -41,14 +41,24 @@ const AboutMeText = () => {
   const text = `Hi, I'm Huzaifa Mukhtar. As a designer and developer, I bring ideas to life through code. I'm passionate about exploring the intersection of technology and design, and leveraging AI and automation to create innovative solutions. Currently, I'm learning Python and expanding my skills in machine learning and data science. Let's connect and share our passion for creativity and technological advancement.`;
 
   return (
-    <div className="min-h-[100vh] bg-[#0f0f0f] text-[clamp(30px,6vw,60px)] text-white">
+    <div className="min-h-screen w-full relative">
+      {/* Emerald Void */}
       <div
-        ref={textRef}
-        className="container py-10 font-medium select-none [&>span]:mr-[10px] [&>span]:inline-block [&>span]:transform [&>span]:text-[#444] [&>span]:transition-all"
-      >
-        {text}
+        className="absolute inset-0 z-0"
+        style={{
+          background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #072607 100%)",
+        }}
+      />
+      <div className="relative min-h-[100vh] text-[clamp(30px,6vw,60px)] text-white">
+        <div
+          ref={textRef}
+          className="container py-10 font-medium select-none [&>span]:mr-[10px] [&>span]:inline-block [&>span]:transform [&>span]:text-[#444] [&>span]:transition-all"
+        >
+          {text}
+        </div>
       </div>
     </div>
+
   );
 };
 

@@ -87,7 +87,16 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <div className="main h-auto w-full bg-zinc-800">
+    <div className="min-h-screen w-full relative pt-20">
+  {/* Emerald Void */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #072607 100%)",
+    }}
+  />
+  {/* Your Content/Components */}
+    <div className="main relative h-auto w-full ">
       <h2 className={clsx("container mb-20 text-6xl text-white")}>
         My{" "}
         <span className={clsx("text-[#14CF93]", mazius.className)}>
@@ -113,6 +122,7 @@ const Services: React.FC = () => {
         ))}
       </div>
     </div>
+</div>
   );
 };
 

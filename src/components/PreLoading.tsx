@@ -17,9 +17,13 @@ const PreLoading = () => {
 
   return (
     <div className="main fixed! top-0! left-0! z-[999]! h-screen w-screen">
+
       <div
         ref={fullScr}
-        className="full-screen h-[100dvh] w-full bg-zinc-900 text-white lg:h-screen"
+        className="full-screen absolute inset-0 z-0 h-[100dvh] w-full bg-zinc-900 text-white lg:h-screen"
+        style={{
+      background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #072607 100%)",
+    }}
       >
         <div className="absolute top-[5%] left-1/2 flex -translate-x-1/2 flex-col items-center">
           <RevealText>Design Portfolio</RevealText>
