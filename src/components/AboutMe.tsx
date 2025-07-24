@@ -52,7 +52,7 @@ const AboutMe = () => {
       </div>
 
 
-      <main className="w-full lg:w-1/2 h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px]">
+      <main className="w-full flex items-center justify-center lg:w-1/2 h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px]">
         <Spline
           scene="https://prod.spline.design/Z2jq0QoqHUTdzjtf/scene.splinecode"
           className="w-full h-full"
