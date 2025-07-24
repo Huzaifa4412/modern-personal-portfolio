@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import AboutMeText from "@/components/AboutMeText";
 import Works from "@/components/Works";
 import Services from "@/components/Services";
+import MyProjects from "@/components/my-projects";
 
 const page = () => {
   return (
@@ -35,6 +36,7 @@ const page = () => {
           <AboutMeText />
           <Works />
           <Services />
+          <MyProjects />
         </div>
       </div>
     </>
