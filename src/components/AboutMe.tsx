@@ -2,23 +2,16 @@
 
 import { mazius } from "@/font";
 // import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 // import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-// import Spline from '@splinetool/react-spline';
-import { Application } from "@splinetool/runtime";
+import Spline from '@splinetool/react-spline';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const app = new Application(canvasRef.current!);
-    app.load("https://prod.spline.design/NEW_SCENE_WITHOUT_LOGO/scene.splinecode");
-  }, []);
   // const imageRef = useRef<HTMLDivElement | null>(null);
 
   // useGSAP(
@@ -59,9 +52,12 @@ const AboutMe = () => {
       </div>
 
 
-      <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]">
-        <canvas ref={canvasRef} className="w-full h-full" />
-      </div>
+      <main className="w-full lg:w-1/2 h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px]">
+        <Spline
+          scene="https://prod.spline.design/Z2jq0QoqHUTdzjtf/scene.splinecode"
+          className="w-full h-full"
+        />
+      </main>
 
       {/* Images */}
       {/* <div
