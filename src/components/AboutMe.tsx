@@ -1,38 +1,46 @@
 "use client";
 
 import { mazius } from "@/font";
-import Image from "next/image";
-import React, { useRef } from "react";
+// import Image from "next/image";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+// import Spline from '@splinetool/react-spline';
+import { Application } from "@splinetool/runtime";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const imageRef = useRef<HTMLDivElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  useGSAP(
-    () => {
-      // Animate the image container rotation
-      gsap.fromTo(
-        imageRef.current,
-        { rotate: -10 },
-        {
-          rotate: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 60%",
-            end: "50% 50%",
-            scrub: 2,
-          },
-        },
-      );
-    },
-    { scope: containerRef }, // ensures cleanup + GSAP isolation
-  );
+  useEffect(() => {
+    const app = new Application(canvasRef.current!);
+    app.load("https://prod.spline.design/NEW_SCENE_WITHOUT_LOGO/scene.splinecode");
+  }, []);
+  // const imageRef = useRef<HTMLDivElement | null>(null);
+
+  // useGSAP(
+  //   () => {
+  //     // Animate the image container rotation
+  //     gsap.fromTo(
+  //       imageRef.current,
+  //       { rotate: -10 },
+  //       {
+  //         rotate: 0,
+  //         ease: "none",
+  //         scrollTrigger: {
+  //           trigger: containerRef.current,
+  //           start: "top 60%",
+  //           end: "50% 50%",
+  //           scrub: 2,
+  //         },
+  //       },
+  //     );
+  //   },
+  //   { scope: containerRef }, // ensures cleanup + GSAP isolation
+  // );
 
   return (
     <div
@@ -50,7 +58,13 @@ const AboutMe = () => {
         </h2>
       </div>
 
-      <div
+
+      <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]">
+        <canvas ref={canvasRef} className="w-full h-full" />
+      </div>
+
+      {/* Images */}
+      {/* <div
         ref={imageRef}
         className="relative mt-10 flex h-full w-full rotate-[-10deg] items-center justify-center"
       >
@@ -75,7 +89,7 @@ const AboutMe = () => {
           width={600}
           height={600}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
