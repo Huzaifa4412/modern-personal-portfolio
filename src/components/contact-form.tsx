@@ -92,7 +92,7 @@ const ContactForm = () => {
     }
 
     return (
-        <div className="relative min-h-screen bg-gradient-to-br from-slate-900/90 via-zinc-900/80 to-slate-900 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        <div className="relative min-h-screen bg-gradient-to-br from-slate-900/70 via-zinc-900/70 to-slate-900 flex items-center justify-center p-4 sm:p-6 lg:p-8">
             <div className="max-w-2xl w-full">
                 {/* Header */}
                 <div ref={titleRef} className="text-center mb-12">
