@@ -3,20 +3,22 @@ export const navItems = [
         name: "Home",
         href: "/",
     },
-    {
-        name: "Playbook",
-        href: "/",
-    },
+
     {
         name: "About",
-        href: "/",
+        href: "#about",
     },
+
     {
         name: "Craft",
-        href: "/",
+        href: "#craft",
+    },
+    {
+        name: "Playbook",
+        href: "#playbook",
     },
     {
         name: "Connect",
-        href: "/",
+        href: "#connect",
     },
 ];

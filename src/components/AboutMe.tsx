@@ -36,6 +36,7 @@ const AboutMe = () => {
 
   return (
     <div
+      id="about"
       ref={containerRef}
       className="relative container my-25 flex h-[80vh] w-full flex-col items-center justify-between gap-20 md:gap-0 lg:flex-row"
     >

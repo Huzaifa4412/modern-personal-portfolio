@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useLayoutEffect, useRef, useState, useCallback } from "react";
 import { mazius } from "@/font";
 import { serviceData } from "@/constants/serviceData";
@@ -64,8 +63,8 @@ const MyServices = () => {
   // };
 
   return (
-    <div className="container h-full w-full py-20">
-      <h2 className="text-7xl text-white">
+    <div id="craft" className=" container h-full w-full py-20">
+      <h2 className="md:text-7xl text-5xl  text-white">
         My{" "}
         <span className={clsx("text-[#14CF93]", mazius.className)}>
           Services

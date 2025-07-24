@@ -9,6 +9,8 @@ import AboutMeText from "@/components/AboutMeText";
 import Works from "@/components/Works";
 import Services from "@/components/Services";
 import MyProjects from "@/components/my-projects";
+import Footer from "@/components/spectrumui/floatingparticle-footer";
+import ContactForm from "@/components/contact-form";
 
 const page = () => {
   return (
@@ -37,6 +39,8 @@ const page = () => {
           <Works />
           <Services />
           <MyProjects />
+          <ContactForm />
+          <Footer />
         </div>
       </div>
     </>

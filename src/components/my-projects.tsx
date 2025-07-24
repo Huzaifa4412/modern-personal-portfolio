@@ -13,8 +13,8 @@ const MyProjects = async () => {
 
 
     return (
-        <div className=' w-full relative py-20 container'>
-            <h2 className={clsx("container mb-20 text-7xl text-black")}>
+        <div id='playbook' className=' w-full relative py-20 container'>
+            <h2 className={clsx("container mb-20 md:text-7xl text-5xl text-black")}>
                 My{" "}
                 <span className={clsx("text-[#14CF93]", mazius.className)}>
                     Projects

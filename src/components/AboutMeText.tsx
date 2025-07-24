@@ -49,7 +49,7 @@ const AboutMeText = () => {
           background: "radial-gradient(125% 125% at 50% 10%, #000000 40%, #072607 100%)",
         }}
       />
-      <div className="relative min-h-[100vh] text-[clamp(30px,6vw,60px)] text-white">
+      <div className="relative min-h-[100vh] flex items-center justify-center text-[clamp(30px,6vw,60px)] text-white">
         <div
           ref={textRef}
           className="container py-10 font-medium select-none [&>span]:mr-[10px] [&>span]:inline-block [&>span]:transform [&>span]:text-[#444] [&>span]:transition-all"
